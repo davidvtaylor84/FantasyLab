@@ -24,9 +24,10 @@ public class MothMan extends Enemy{
         return prophecy;
     }
 
-    public void makeProphecy(){
+    public void makeProphecy(ITakeDamage player){
         System.out.println(this.prophecy);
         this.increaseHealth(20);
+        player.takeDamage(50);
     }
 
 }
