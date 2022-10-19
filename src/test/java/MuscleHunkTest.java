@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 import players.fighters.MuscleHunk;
+import weapons.BareFists;
 import weapons.CarTire;
 
 import static org.junit.Assert.assertEquals;
@@ -24,9 +25,8 @@ public class MuscleHunkTest {
 
     @Test
     public void canSuperHunkFlex(){
-        muscleHunk.addWeapon(carTire);
         muscleHunk.superHunkFlex();
-        assertEquals(61, muscleHunk.getAttackPower(),0.0);
+        assertEquals(52, muscleHunk.getAttackPower());
     }
 
 

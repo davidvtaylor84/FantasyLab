@@ -1,5 +1,7 @@
 package enemies;
 
+import players.fighters.IAttack;
+
 public abstract class Enemy {
 
     private String name;

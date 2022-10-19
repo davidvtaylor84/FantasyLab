@@ -34,8 +34,10 @@ public abstract class Fighter extends Player implements IAttack{
     }
 
     public int attack(){
-        int weaponDamage  = this.weaponCache.get(0).damage();
-        this.attackPower += weaponDamage;
+        if (!weaponCache.isEmpty()) {
+            int weaponDamage = this.weaponCache.get(0).damage();
+            this.attackPower += weaponDamage;
+        }
         return attackPower;
     }
 
@@ -51,5 +53,16 @@ public abstract class Fighter extends Player implements IAttack{
         return weaponCache.size();
     }
 
+    public void chooseWeapon(int weaponIndex){
+        IDamage temp = weaponCache.get(weaponIndex);
+        for(int i = weaponIndex; i>0; i--){
+            weaponCache.set(i, weaponCache.get(i - 1));
+        }
+        weaponCache.set(0, temp);
+    }
+
+    public IDamage retrieveWeapon(int index){
+        return weaponCache.get(index);
+    }
 
 }
