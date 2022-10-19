@@ -1,5 +1,6 @@
 package players.fighters;
 
+import enemies.IEnemyAttack;
 import players.Player;
 import weapons.IDamage;
 import weapons.Weapon;
@@ -12,6 +13,7 @@ public abstract class Fighter extends Player implements IAttack{
     private String armour;
     ArrayList<IDamage> weaponCache;
     private int attackPower;
+    IEnemyAttack enemy;
 
     public Fighter(String name, int healthPoints, String martialDiscipline, String armour, int attackPower) {
         super(name, healthPoints);
@@ -33,12 +35,11 @@ public abstract class Fighter extends Player implements IAttack{
         this.weaponCache.add(weapon);
     }
 
-    public int attack(){
+    public void attack(IEnemyAttack enemy){
         if (!weaponCache.isEmpty()) {
             int weaponDamage = this.weaponCache.get(0).damage();
-            this.attackPower += weaponDamage;
-        }
-        return attackPower;
+            enemy.takeDamage(this.attackPower += weaponDamage);
+        } else { enemy.takeDamage(this.getAttackPower());}
     }
 
     public int getAttackPower() {

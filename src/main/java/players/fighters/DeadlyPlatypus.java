@@ -1,5 +1,7 @@
 package players.fighters;
 
+import enemies.IEnemyAttack;
+
 public class DeadlyPlatypus extends Fighter{
 
     private int talonLength;
@@ -13,9 +15,9 @@ public class DeadlyPlatypus extends Fighter{
         return this.talonLength;
     }
 
-    public void deathSlash(){
+    public void deathSlash(IEnemyAttack enemy){
         this.increaseAttackPower(this.talonLength);
-        this.attack();
+        this.attack(enemy);
     }
 
 

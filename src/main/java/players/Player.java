@@ -1,6 +1,6 @@
 package players;
 
-public abstract class Player {
+public abstract class Player implements ITakeDamage {
 
     private String name;
     private int healthPoints;
@@ -18,7 +18,8 @@ public abstract class Player {
         return healthPoints;
     }
 
+
     public void takeDamage(int damage){
-        healthPoints -= damage;
+        this.healthPoints -= damage;
     }
 }

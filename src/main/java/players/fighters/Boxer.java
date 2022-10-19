@@ -1,5 +1,7 @@
 package players.fighters;
 
+import enemies.IEnemyAttack;
+
 public class Boxer extends Fighter{
 
     private String gloveBrand;
@@ -19,9 +21,9 @@ public class Boxer extends Fighter{
         return championshipTitle;
     }
 
-    public void fistsOfFury(){
+    public void fistsOfFury(IEnemyAttack enemy){
         this.takeDamage(5);
         this.increaseAttackPower(30);
-        this.attack();
+        this.attack(enemy);
     }
 }

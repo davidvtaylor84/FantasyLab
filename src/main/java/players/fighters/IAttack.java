@@ -1,7 +1,9 @@
 package players.fighters;
 
+import enemies.IEnemyAttack;
+
 public interface IAttack {
 
-    int attack();
+    void attack(IEnemyAttack enemy);
 
 }

@@ -1,17 +1,21 @@
 package enemies;
 
-import players.fighters.IAttack;
+import players.ITakeDamage;
 
-public abstract class Enemy {
+public abstract class Enemy implements IEnemyAttack{
 
     private String name;
     private String race;
     private int healthPoints;
 
-    public Enemy(String name, String race, int healthPoints) {
+    private int attackPower;
+    ITakeDamage player;
+
+    public Enemy(String name, String race, int healthPoints, int attackPower) {
         this.name = name;
         this.race = race;
         this.healthPoints = healthPoints;
+        this.attackPower = attackPower;
     }
 
     public String getName() {
@@ -46,4 +50,11 @@ public abstract class Enemy {
         healthPoints+= increase;
     }
 
+    public void enemyAttack(ITakeDamage player){
+        player.takeDamage(this.attackPower);
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
 }

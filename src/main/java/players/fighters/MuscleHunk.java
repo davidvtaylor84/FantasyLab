@@ -1,8 +1,12 @@
 package players.fighters;
 
+
+import enemies.IEnemyAttack;
+
 public class MuscleHunk extends Fighter{
 
     private int hotnessLevel;
+    IEnemyAttack enemy;
 
     public MuscleHunk(String name, int healthPoints, String martialDiscipline, String armour, int attackPower, int hotnessLevel) {
         super(name, healthPoints, martialDiscipline, armour, attackPower);
@@ -13,8 +17,8 @@ public class MuscleHunk extends Fighter{
         return hotnessLevel;
     }
 
-    public void superHunkFlex(){
+    public void superHunkFlex(IEnemyAttack enemy){
         this.increaseAttackPower(this.hotnessLevel);
-        this.attack();
+        this.attack(enemy);
     }
 }
