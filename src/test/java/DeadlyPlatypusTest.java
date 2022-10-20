@@ -17,7 +17,7 @@ public class DeadlyPlatypusTest {
 
     @Before
     public void before(){
-        deadlyPlatypus = new DeadlyPlatypus("Bobby Newhart", 80, "karate", "Greek toga", 10, 8);
+        deadlyPlatypus = new DeadlyPlatypus("Bobby Newhart", 80, "karate", "Greek toga", 10, 5, 8);
         gunSword = new GunSword("Colt with butcher knife", "Old witch in a well", 5, 50);
         bareFists = new BareFists("left and right", "Cut them off a dead man", 9, 3);
         bigfoot = new Bigfoot("Mick", "Lesser Spotted Bigfoot", 80, 20,"Neon green spots", 800);
@@ -28,12 +28,13 @@ public class DeadlyPlatypusTest {
     @Test
     public void canUseDeathSlash(){
         deadlyPlatypus.deathSlash(bigfoot);
-        assertEquals(23, deadlyPlatypus.getAttackPower());
+        assertEquals(57, bigfoot.getHealthPoints());
+        assertEquals(10, deadlyPlatypus.getAttackPower());
     }
 
     @Test
     public void canSwapWeapon(){
-        deadlyPlatypus.chooseWeapon(1);
+        deadlyPlatypus.chooseWeapon(2);
         assertEquals(9, deadlyPlatypus.retrieveWeapon(0).damage() );
     }
 

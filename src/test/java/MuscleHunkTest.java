@@ -15,7 +15,7 @@ public class MuscleHunkTest {
 
     @Before
     public void before(){
-        muscleHunk = new MuscleHunk("The Great Oiled One", 150, "Bodyflexing", "Goose fat", 40, 12);
+        muscleHunk = new MuscleHunk("The Great Oiled One", 150, "Bodyflexing", "Goose fat", 40, 5,12);
         carTire = new CarTire("Range Rover tire", "Stolen from a LandRover", 9, "Michelin", 225.00);
         bigfoot = new Bigfoot("Mick", "Lesser Spotted Bigfoot", 80, 20,"Neon green spots", 800);
 
@@ -30,7 +30,7 @@ public class MuscleHunkTest {
     @Test
     public void canSuperHunkFlex(){
         muscleHunk.superHunkFlex(bigfoot);
-        assertEquals(52, muscleHunk.getAttackPower());
+        assertEquals(40, muscleHunk.getAttackPower());
     }
 
 
