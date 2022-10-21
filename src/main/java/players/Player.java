@@ -21,5 +21,8 @@ public abstract class Player implements ITakeDamage {
 
     public void takeDamage(int damage){
         this.healthPoints -= damage;
+        if(this.healthPoints < 1){
+            System.out.println(this.name+ " no longer answers to their name.");
+        }
     }
 }
