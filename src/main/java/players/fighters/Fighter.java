@@ -33,9 +33,21 @@ public abstract class Fighter extends Player implements IAttack{
         return armour;
     }
 
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public int getInspiration() {
+        return inspiration;
+    }
+
     public void addWeapon(IDamage weapon){
         this.weaponCache.add(weapon);
     }
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
+    }
+
 
     public void attack(IEnemyAttack enemy){
         if (!weaponCache.isEmpty()) {
@@ -45,13 +57,9 @@ public abstract class Fighter extends Player implements IAttack{
         } else { enemy.takeDamage(this.getAttackPower());}
     }
 
-    public int getAttackPower() {
-        return attackPower;
-    }
 
-    public void setAttackPower(int attackPower) {
-        this.attackPower = attackPower;
-    }
+
+
 
     public void increaseAttackPower(int increase){
         attackPower += increase;
@@ -76,9 +84,7 @@ public abstract class Fighter extends Player implements IAttack{
         return weaponCache.get(index);
     }
 
-    public int getInspiration() {
-        return inspiration;
-    }
+
 
     public void setInspiration(int inspiration) {
         this.inspiration = inspiration;

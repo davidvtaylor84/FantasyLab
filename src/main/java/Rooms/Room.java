@@ -29,6 +29,4 @@ public abstract class Room{
         return roomDescription;
     }
 
-    
-
 }
